@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie de Fibonacci</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Serie de Fibonacci</title>
+</head>
+<body>
+
+<h2>Calcular Serie de Fibonacci</h2>
+<div id="resultado"></div>
+
+<script>
+    
+    function fibonacciSeries(n) {
+        let series = [];
+
+        for (let i = 0; i < n; i++) {
+            if (i <= 1) {
+                series.push(i);
+            } else {
+                series.push(series[i - 1] + series[i - 2]);
+            }
+        }
+
+        return series;
+    }
+
+    function mostrarSerieFibonacci() {
+        let input = prompt("Ingrese un número: ");
+
+        while (isNaN(input) || input === null || input === "") {
+            alert("Ingrese un número válido.");
+            input = prompt("Ingrese un número:");
+        }
+
+        const numero = parseInt(input);
+        const serie = fibonacciSeries(numero);
+
+       
+        const resultadoElement = document.getElementById('resultado');
+        resultadoElement.innerHTML = `Resultado serie de Fibonacci: ${serie.join(', ')}`;
+    }
+
+    
+    window.onload = mostrarSerieFibonacci;
+</script>
+
+</body>
+</html>
+
+    
+</body>
+</html>
